@@ -1,4 +1,3 @@
-
 export const state = () => ({
   list: [],
   species: {},
@@ -6,9 +5,11 @@ export const state = () => ({
 
 export const getters = {
   speciesKeys: (state) => state.list,
-  speciesSets: (state) => state.list.map((speciesKey) => state.species[speciesKey]),
+  speciesSets: (state) =>
+    state.list.map((speciesKey) => state.species[speciesKey]),
   //speciesSets: (state) => state.list.map((speciesKey) => state.species[speciesKey]),
-  getSpecies: (state) => (key) => state.species[key] ? state.species[key] : undefined,
+  getSpecies: (state) => (key) =>
+    state.species[key] ? state.species[key] : undefined,
 };
 
 export const mutations = {
@@ -40,18 +41,19 @@ export const mutations = {
 };
 
 const getDefaultState = () => ({
-  key: '',
-  name: '',
-  hint: 'A custom species',
-  group: 'Mankind',
+  key: "",
+  name: "",
+  hint: "A custom species",
+  group: "Mankind",
   cost: 0,
   costs: { total: 0, stats: 0, species: 0, other: 0 },
   baseTier: 1,
   speed: 6,
   source: {
-    book: 'Custom',
-    key: 'custom',
+    book: "Custom",
+    key: "custom",
   },
+  trait: [],
   speciesFeatures: [],
   attributeMaximums: [],
   traitMaximums: [],
